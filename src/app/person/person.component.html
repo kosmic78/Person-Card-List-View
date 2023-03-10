@@ -1,0 +1,20 @@
+<div class="center">
+    <div *ngFor="let person of persons">
+      <div class="person-card">
+        <img [src]="person.picture.thumbnail" (click)="openModal(person)">
+        <div class="person-details">
+          <span class="person-name">{{ person.name.first }} {{ person.name.last }}</span>
+          <br>
+          <span class="person-email">{{ person.email }}</span>
+        </div>
+      </div>
+    </div>
+</div>
+  
+<div class="modal" *ngIf="showModal">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <img [src]="selectedPerson.picture.large">
+    </div>
+</div>
+  
